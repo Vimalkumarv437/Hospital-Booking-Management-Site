@@ -1,0 +1,39 @@
+/* styles for doctor info table page */
+
+
+.filter_doc_info label
+{
+ position: relative;
+    left: 190px;
+    top: 33px;
+    font-size: large;
+}
+
+
+.doctor-patient-table {
+    margin: 40px auto;
+    max-width: 800px;
+    border: 1px solid;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-patient-table thead {
+  
+    color: #ffffff;
+}
+
+.doctor-patient-table th, .doctor-patient-table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.doctor-patient-table th {
+    font-weight: bold;
+}
+
+.doctor-patient-table td {
+    font-size: 14px;
+}

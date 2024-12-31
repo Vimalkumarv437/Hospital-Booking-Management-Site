@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Booking site</title>
+    {%load static%}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{%static 'css/Navbar.css'%}">
+    <link rel="stylesheet" href="{%static 'css/Appoinment.css'%}">
+    <link rel="stylesheet" href="{%static 'css/ListOfUsers.css'%}">
+    <link rel="stylesheet" href="{%static 'css/ViewsForUsers.css' %}">
+    <link rel="stylesheet" href="{%static 'css/DoctorsList.css'%}">
+    <link rel="stylesheet" href="{%static 'css/CreateDoctor.css'%}">
+    <link rel="stylesheet" href="{%static  'css/ViewsForDoctors.css'%}">
+    <link rel="stylesheet" href="{%static 'css/EditingDoctorprofile.css'%}">
+    <link rel="stylesheet" href="{%static 'css/DoctorInfo.css'%}">
+    <link rel="stylesheet" href="{%static 'css/HistoryForUsers.css'%}">
+</head>
+<body>
+    <!-----section for navbar only ----->
+    <nav>
+
+        <ul  class="sidebar">
+            <li onclick="closesidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="{%  url 'Appointment' %}">APPOINTMENTS</a></li>
+            <li><a href="{% url 'ListOfUsers' %}"> USERS</a></li>
+            <li><a href="{%url 'DoctorsList'%}"> LIST</a></li>
+            <li><a href="{%url 'Doctorinfo'%}">REPORTS</a></li>
+            <button class="logout_btn">LOGOUT</button>
+        </ul>
+
+
+
+
+        <ul >
+            <li><img src="{%static 'images/logo.png'%}" alt="logo image"></li>
+            <li class="hideOnMobile"><a href="{%  url 'Appointment' %}">APPOINTMENTS</a></li>
+            <li class="hideOnMobile"><a href="{% url 'ListOfUsers' %}">USERS</a></li>
+            <li class="hideOnMobile"><a href="{%url 'DoctorsList'%}">DOCTORS</a></li>
+            <li class="hideOnMobile"><a href="{%url 'Doctorinfo'%}">REPORTS</a></li>
+            <li class="hideOnMobile"><button class="logout_btn">LOGOUT</button></li>
+            <li class="menuButton"   onclick="showsidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a> </li>
+        </ul>
+
+
+
+
+
+    </nav>
+    {% block 'content' %}
+
+    {% endblock %}
+
+
+
+<script>
+
+// function for showing the sidebar  
+function showsidebar(){
+
+const sidebar=document.querySelector('.sidebar')
+
+sidebar.style.display='flex'
+
+}
+// function for closing the sidebar 
+
+function closesidebar()
+{
+    const sidebar=document.querySelector('.sidebar')
+
+    sidebar.style.display='none'
+}
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

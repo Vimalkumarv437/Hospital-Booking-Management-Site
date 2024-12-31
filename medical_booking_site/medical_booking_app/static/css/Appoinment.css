@@ -1,0 +1,102 @@
+/* styles for the search bar  */
+body{
+    background-image: linear-gradient(to right bottom, #651967, #6b1e84, #6928a4, #5837c8, #1248ee);
+    
+}
+.search_dept
+{
+    display: flex;
+    justify-content: center;
+}
+.search_dept input
+{
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    border: 1px solid;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    background-color: transparent;
+    backdrop-filter: blur(10px); 
+    color: white;
+}
+.search_dept input::placeholder
+{
+    color: white;
+}
+
+
+
+
+
+
+/* styles for the filter date field */
+.filter-date
+{
+    display: flex;
+    justify-content: right;
+    overflow-x: hidden;
+}
+.filter-date label
+{
+margin-right: 20px;
+font-size: larger;
+}
+.filter-date input
+{
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 10px;
+    color: white;
+}
+
+
+/* styles for the smaller screen  */
+@media (max-width: 900px){
+
+    .search_dept input
+    {
+margin-right: 200px;
+
+   
+
+}
+
+@media (max-width: 768px){
+
+    .search_dept input
+    {
+margin-right: 269px;
+position: relative;
+top: 34px;
+    }
+    .filter-date label
+    {
+    width: 50%;
+    position: relative;
+left: 15px;
+    }
+
+}
+
+
+
+
+@media (max-width: 500px){
+
+    .search_dept input
+    {
+margin-right: 269px;
+position: relative;
+top: 50px;
+    }
+    .filter-date label
+{
+width: 50%;
+position: relative;
+left: 90px;
+}
+
+}
+

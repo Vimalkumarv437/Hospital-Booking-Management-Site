@@ -1,0 +1,13 @@
+.Myappintment_title
+{
+    height: 50vh;
+}
+.Myappintment_text
+{
+    background-color: rgba(34, 58, 102, 0.5);
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

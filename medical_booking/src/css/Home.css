@@ -1,0 +1,209 @@
+.main_landing_div {
+    display: flex;
+    overflow: hidden;
+}
+
+
+/* styles for cards  */
+
+.feature-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-item {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 calc(33% - 20px);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .feature-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .feature-item {
+        flex: 1 1 100%;
+    }
+}
+
+/* Styling for the buttons */
+.btn_appoinment {
+    display: inline-block;
+    color: white;
+    background-color: #223a66;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn_appoinment:hover {
+    background-color: #e12454;
+}
+
+/* styles for personal detail images  */
+
+
+
+.heading {
+    color: #223a66;
+    font-size: 60px;
+    
+}
+.right-side-content
+{
+    margin-top: 170px;
+}
+.Service_button {
+    background-color: #e12454;
+    color: white;
+    width: 37%;
+    border: none;
+    height: 44px;
+    border-radius: 33px;
+    font-weight: bold;
+}
+.Service_button:hover {
+    background-color: #223a66;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    .right-side-content
+    {
+        margin-top: 50px;
+    }
+    
+}
+
+
+
+
+
+
+/* styles for counting number div */
+
+.counting_number {
+    width: 80%;
+    height: auto;
+    background-color: #223a66;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    margin-left: 157px;
+ 
+}
+
+.counting_num1 {
+  display: inline-block;
+    background-color: #223a66;
+    color: white;
+ padding: 30px;
+}
+.counting_num1 h1 {
+  font-size:70px;
+}
+
+.counting_num2 {
+  display: inline-block;
+    background-color: #223a66;
+    color: white;
+    padding: 30px;
+ 
+}
+.counting_num2 h1 {
+  font-size:70px;
+}
+.counting_num3 {
+  display: inline-block;
+    background-color: #223a66;
+    color: white;
+    padding: 30px;
+
+}
+.counting_num3 h1 {
+  font-size:70px;
+}
+
+.counting_num4 {
+  display: inline-block;
+    background-color: #223a66;
+    color: white;
+    padding: 30px;
+
+}
+.counting_num4 h1 {
+  font-size:70px;
+}
+@media (max-width: 768px) {
+  .counting_number
+  {
+    margin-left: 50px;
+    flex-direction: column;
+ 
+  }
+
+}
+
+
+/* styles for award details */
+.award-text
+{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.award-text h1{
+  color: #223a66;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+
+/* styles for the div content reviews of doctors */
+
+.doc_review_text
+{
+  display: flex;
+justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.doc_review_text h1{
+  font-size: 44px;
+ font-weight: 700;
+}
+
+/* styles for partners details div content */
+
+.partner_text
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.partner_text h2
+{
+  font-size: 44px;
+  font-weight: 700;
+  
+}

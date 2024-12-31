@@ -1,0 +1,59 @@
+{% extends 'layout/Navbar.html' %}
+
+{% block 'content' %}
+
+<!-- Form for showing user history -->
+<div class="form-container">
+    <h2 class="text-center mb-4">History</h2>
+    <form action="" method="post">
+      <!-- Name -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" readonly value="{{ user.name }}" style="background-color: transparent; color: white;">
+      </div>
+      <!-- Gender -->
+      <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <input type="text" class="form-control" id="gender" name="gender" value="{{ user.get_gender_display }}" readonly style="background-color: transparent; color: white;">
+      </div>
+      <!-- Age -->
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="number" class="form-control" id="age" name="age" value="{{ user.age }}" readonly style="background-color: transparent; color: white;">
+      </div>
+      <!-- Contact Info -->
+      <div class="mb-3">
+        <label for="contact" class="form-label">Contact Info</label>
+        <input type="text" class="form-control" id="contact" name="contact" readonly value="{{ user.contact_number }}" style="background-color: transparent; color: white;">
+      </div>
+    </form>
+</div>
+
+<!-- Table for showing history of user appointments -->
+<div class="container my-5">
+    <h2 class="text-center mb-4" style="font-size: 44px; font-weight: 700;">User Appointments</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="text-light text-center" style="background-color: transparent; backdrop-filter: blur(1px);">
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Doctor Name</th>
+          </tr>
+        </thead>
+        <tbody class="text-light" style="background-color: transparent;">
+          {% for appointment in appointments %}
+          <tr>
+            <td>{{ appointment.date }}</td>
+            <td>{{ appointment.doctor.name }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="2" class="text-center">No appointments found for this user.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</div>
+
+{% endblock %}

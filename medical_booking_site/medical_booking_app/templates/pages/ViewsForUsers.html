@@ -1,0 +1,58 @@
+{% extends 'layout/Navbar.html' %}
+
+{% block 'content' %}
+
+<div class="container">
+    <div class="view-info-form-container">
+        <h2>User Information</h2>
+        <form>
+            <div class="row mb-3">
+                <!-- Name Field -->
+                <div class="col-md-6">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" value="{{ user.name }}" readonly>
+                </div>
+                <!-- Age Field -->
+                <div class="col-md-6">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age" value="{{ user.age }}" readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                
+                <div class="col-md-6" >
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-control" id="gender" disabled style="background-color: transparent;">
+                        <option value="M" {% if user.gender == 'M' %}selected{% endif %}>Male</option>
+                        <option value="F" {% if user.gender == 'F' %}selected{% endif %}>Female</option>
+                        <option value="O" {% if user.gender == 'O' %}selected{% endif %}>Other</option>
+                    </select>
+                </div>
+                <!-- Contact Field -->
+                <div class="col-md-6">
+                    <label for="contact" class="form-label">Contact</label>
+                    <input type="tel" class="form-control" id="contact" value="{{ user.contact_number }}" readonly>
+                </div>
+            </div>
+
+            <!-- Address Field -->
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" id="address" readonly>{{ user.address }}</textarea>
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" value="{{ user.email }}" readonly>
+            </div>
+
+            <!-- Button to go back to the list of users -->
+            <a href="{% url 'ListOfUsers' %}" class="btn w-50 text-center text-light" style="background-color: #ff1d58;">Back to page</a>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

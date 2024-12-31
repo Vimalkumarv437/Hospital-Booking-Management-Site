@@ -1,0 +1,59 @@
+{% extends 'layout/Navbar.html' %}
+
+{% block 'content' %}
+{% load static %}
+
+<div class="container">
+    <form class="doctor-details-form">
+        <h2>Doctor Details</h2>
+
+        <!-- Name -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" value="{{ doctor.name }}" readonly style="background-color: transparent;">
+        </div>
+
+        <!-- Image -->
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <div class="text-center">
+                {% if doctor.image %}
+                    <img src="{{ doctor.image.url }}" alt="Doctor Image" class="img-thumbnail">
+                {% else %}
+                    <img src="{% static 'images/default.jpg' %}" alt="No Image" class="img-thumbnail">
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Qualification -->
+        <div class="mb-3">
+            <label for="qualification" class="form-label">Qualification</label>
+            <input type="text" class="form-control" id="qualification" value="{{ doctor.qualification }}" readonly style="background-color: transparent;">
+        </div>
+
+        <!-- Experience -->
+        <div class="mb-3">
+            <label for="experience" class="form-label">Experience (in years)</label>
+            <input type="text" class="form-control" id="experience" value="{{ doctor.experience }}" readonly style="background-color: transparent;">
+        </div>
+
+        <!-- Department -->
+        <div class="mb-3">
+            <label for="department" class="form-label">Department</label>
+            <input type="text" class="form-control" id="department" value="{{ doctor.department.name }}" readonly style="background-color: transparent;">
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mb-3">
+            <label for="contact" class="form-label">Contact Info</label>
+            <input type="text" class="form-control" id="contact" value="{{ doctor.contact_number }}" readonly style="background-color: transparent;">
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center">
+            <a href="{% url 'DoctorsList' %}" class="btn btn-primary">Back to List</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

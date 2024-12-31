@@ -1,0 +1,82 @@
+.about_title
+{
+    height: 50vh;
+}
+.about_text
+{
+    background-color: rgba(34, 58, 102, 0.5);
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.personal_text
+{
+    display: flex;
+    margin-top: 100px;
+    height: 45vh;
+}
+.personal_text p{
+    color:  #6F8BA4;
+    margin-left: 70px;
+    margin-top: 10px;
+}
+.personal_text img{
+
+ margin-top: 20rem;
+ width: 20%;
+ height: 50px;
+ position: relative;
+ right: 48rem;
+ bottom: 10rem;
+}
+.speciallist_text
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    height: auto;
+    background-color: #f4f9fc;
+}
+.speciallist_text h1
+{
+color: #223a66;
+font-size: 44px;
+font-weight: bold;
+}
+.speciallist_text p{
+    color:#6F8BA4 ;
+}
+.text_image
+{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .personal_text
+    {
+        flex-direction: column;
+    }
+    .personal_text img{
+
+      display: none;
+       }
+}

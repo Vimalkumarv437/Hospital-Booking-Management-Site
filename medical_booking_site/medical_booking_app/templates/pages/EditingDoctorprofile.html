@@ -1,0 +1,56 @@
+{% extends 'layout/Navbar.html' %}
+
+{% block 'content' %}
+
+<div class="container">
+    <form class="edit-doctor-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Edit Doctor Details</h2>
+
+        <!-- Name -->
+        <div class="mb-3">
+            <label for="edit-name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="edit-name" name="name" placeholder="Enter doctor's name" value="{{ doctor.name }}" style="background-color: transparent;">
+        </div>
+
+        <!-- Image -->
+        <div class="mb-3">
+            <label for="edit-image" class="form-label">Image</label>
+            <input type="file" class="form-control" id="edit-image" name="image" style="background-color: transparent;">
+            <div class="text-center mt-2">
+                <img src="{{ doctor.image.url }}" alt="Doctor Image" class="img-thumbnail" style="max-width: 150px;">
+            </div>
+        </div>
+
+        <!-- Qualification -->
+        <div class="mb-3">
+            <label for="edit-qualification" class="form-label">Qualification</label>
+            <input type="text" class="form-control" id="edit-qualification" name="qualification" placeholder="Enter qualification" value="{{ doctor.qualification }}" style="background-color: transparent;">
+        </div>
+
+        <!-- Experience -->
+        <div class="mb-3">
+            <label for="edit-experience" class="form-label">Experience (in years)</label>
+            <input type="number" class="form-control" id="edit-experience" name="experience" placeholder="Enter years of experience" value="{{ doctor.experience }}" style="background-color: transparent;">
+        </div>
+
+        <!-- Department -->
+        <div class="mb-3">
+            <label for="edit-department" class="form-label">Department</label>
+            <input type="text" class="form-control" id="edit-department" name="department" placeholder="Enter department" value="{{ doctor.department.name }}" style="background-color: transparent;">
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mb-3">
+            <label for="edit-contact" class="form-label">Contact Info</label>
+            <input type="text" class="form-control" id="edit-contact" name="contact" placeholder="Enter contact info" value="{{ doctor.contact_number }}" style="background-color: transparent;">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-submit">Save Changes</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+/* styles for editing doctor detail form  */
+
+.edit-doctor-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: transparent; 
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-doctor-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white; 
+}
+
+.edit-doctor-form label {
+    font-weight: bold;
+    color: white;
+}
+
+.edit-doctor-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    color: white;
+}
+
+.edit-doctor-form .form-control:focus {
+    border-color: #ff6f00; 
+    box-shadow: 0 0 5px rgba(255, 111, 0, 0.5);
+}
+
+.edit-doctor-form .btn-submit {
+    background-color: #4e30e7; 
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.edit-doctor-form .btn-submit:hover {
+    background-color: #d31619; 
+}

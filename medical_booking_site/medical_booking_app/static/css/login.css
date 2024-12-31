@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  min-height: 100vh; 
+    background-image: linear-gradient(to right bottom, #651967, #6b1e84, #6928a4, #5837c8, #1248ee);
+
+}
+.form_div
+{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: larger;
+ width: 260%;
+ max-width: 500px;
+ position: relative;
+    right: 170px;
+    background-color: transparent;
+    
+  
+}
+form {
+  max-width: 500px; 
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  border: 1px solid white;
+}
+
+
+/* Heading styles */
+form h2 {
+  margin-bottom: 30px;
+  text-align: center;
+ color: white;
+}
+
+/* Label styles */
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Input and button styles */
+form input,
+form button {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-left: 50px;
+  background-color: transparent;
+  color: white;
+}
+form input::placeholder
+{
+color: white;
+}
+/* Button hover effect */
+form button {
+  background-color:rgb(35, 35, 229);
+  color: white;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  form {
+    margin: 10px;
+    padding: 15px;
+    position: relative;
+        left: 40px;
+        width: 100%;
+  }
+  .form_div
+  {
+width: 139%;
+position: relative;
+    right: 100px;
+  }
+
+  form h2 {
+    font-size: 1.5rem;
+  }
+
+  form label {
+    font-size: 1rem;
+  }
+
+  form input,
+  form button {
+    font-size: 1rem;
+  }
+}
+
+/* Media query for very small screens mobile */
+@media (max-width: 480px) {
+  form {
+    padding: 10px;
+  }
+
+  form h2 {
+    font-size: 1.2rem;
+  }
+
+  form input,
+  form button {
+    font-size: 0.9rem;
+  }
+}

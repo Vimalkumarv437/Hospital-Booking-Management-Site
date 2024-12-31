@@ -1,0 +1,55 @@
+/* styles for doctors creating form  */
+
+.create-doctor-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid;
+}
+.create-doctor-form input
+{
+background-color: transparent;
+color: white;
+}
+.create-doctor-form input::placeholder
+{
+color: white;
+}
+.create-doctor-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.create-doctor-form label {
+    font-weight: bold;
+    color: white;
+}
+
+.create-doctor-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.create-doctor-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.create-doctor-form .btn-submit {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.create-doctor-form .btn-submit:hover {
+    background-color: #0056b3;
+}

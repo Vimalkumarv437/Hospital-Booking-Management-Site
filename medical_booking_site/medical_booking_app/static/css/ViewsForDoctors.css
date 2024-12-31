@@ -1,0 +1,41 @@
+/* styles for form that show doctors details  */
+
+.doctor-details-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: transparent; 
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-details-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white; 
+}
+
+.doctor-details-form .form-label {
+    font-weight: bold;
+    color: white;
+}
+
+.doctor-details-form .form-control[readonly] {
+    background-color: #e9ecef; 
+    border: 1px solid #ced4da;
+    color: white; 
+}
+
+.doctor-details-form .btn-back {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.doctor-details-form .btn-back:hover {
+    background-color: #0056b3;
+}

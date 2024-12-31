@@ -1,0 +1,76 @@
+{% extends 'layout/Navbar.html' %}
+
+{% block 'content' %}
+<div class="table_div">
+    <!-- Search and Filter -->
+    <form method="GET" action="{% url 'Appointment' %}">
+        <div class="search_dept">    
+            <input type="text" id="search-bar" name="search" placeholder="Search By Department" value="{{ search_query }}">
+        </div>
+        <div class="filter-date">
+            <label for="Filter By Date">
+                Filter By Date: <input type="date" id="filter-date" name="date" placeholder="Filter By Date" value="{{ date_filter }}">
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Apply Filters</button>
+    </form>
+
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="text-center" style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.3); color: white;">
+                <tr>
+                    <th>Patient</th>
+                    <th>Department</th>
+                    <th>Doctor</th>
+                </tr>
+            </thead>
+            <tbody class="text-center" id="appointment-table" style="color: white;">
+                {% for appointment in appointments %}
+                <tr>
+                    <td>{{ appointment.user.name }}</td>
+                    <td>{{ appointment.department.name }}</td>
+                    <td>{{ appointment.doctor.name }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3">No appointments found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination-container" style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+        <nav aria-label="Page navigation" style="background-color: transparent;">
+            <ul class="pagination" style="display: flex; align-items: center; gap: 10px;">
+                {% if appointments.has_previous %}
+                    <!-- Previous Button -->
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ appointments.previous_page_number }}&search={{ search_query }}&date={{ date_filter }}" aria-label="Previous" style="color: white; border: 1px solid white; background-color: transparent;">
+                            &laquo; Previous
+                        </a>
+                    </li>
+                {% endif %}
+
+                <!-- Page Number -->
+                <li class="page-item">
+                    <span class="page-link" style="color: white; background-color: transparent; border: none; font-weight: bold;">
+                        Page {{ appointments.number }} of {{ appointments.paginator.num_pages }}
+                    </span>
+                </li>
+
+                {% if appointments.has_next %}
+                    <!-- Next Button -->
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ appointments.next_page_number }}&search={{ search_query }}&date={{ date_filter }}" aria-label="Next" style="color: white; border: 1px solid white; background-color: transparent;">
+                            Next &raquo;
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock %}

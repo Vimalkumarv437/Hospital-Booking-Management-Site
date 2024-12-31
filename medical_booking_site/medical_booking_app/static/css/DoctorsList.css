@@ -1,0 +1,19 @@
+.btn_create
+{
+    width: 10%;
+    background-color: #1bbf96;
+    color: black;
+    border-radius: 9px;
+    border: 1px solid;
+    bottom: 5px;
+}
+@media(max-width:768px){
+    .btn_create
+    {
+        width: 20%;
+        position: relative;
+        left: 0;
+      
+    }
+
+}

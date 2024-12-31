@@ -1,0 +1,64 @@
+{% extends 'layout/Navbar.html' %}
+
+{% block 'content' %}
+<!-------div for list of users table   ------->
+
+<div class="listuser_table" style="position: relative; top: 20px;">
+    <table class="table table-bordered" id="listuser_table">
+        <thead style=" background-color:transparent; color: white; border: 1px solid white;" class="text-center">
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-center" style="color: white;">
+            {% for user in users %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>
+                    <a href="{% url 'ViewsForUsers' user.id %}" class="btn btn-primary w-25">View</a>
+                    <a href="{% url 'History' user.id %}" class="btn btn-primary w-25">History</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2">No users found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Pagination controls -->
+    <div class="pagination-container" style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+        <nav aria-label="Page navigation" style="background-color: transparent;">
+            <ul class="pagination" style="display: flex; align-items: center; gap: 10px;">
+                {% if users.has_previous %}
+                    <!-- Previous Button -->
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ users.previous_page_number }}" aria-label="Previous" style="color: white; border: 1px solid white; background-color: transparent;">
+                            &laquo; Previous
+                        </a>
+                    </li>
+                {% endif %}
+
+                <!-- Page Number -->
+                <li class="page-item">
+                    <span class="page-link" style="color: white; background-color: transparent; border: none; font-weight: bold;">
+                        Page {{ users.number }} of {{ users.paginator.num_pages }}
+                    </span>
+                </li>
+
+                {% if users.has_next %}
+                    <!-- Next Button -->
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ users.next_page_number }}" aria-label="Next" style="color: white; border: 1px solid white; background-color: transparent;">
+                            Next &raquo;
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>
+
+{% endblock %}

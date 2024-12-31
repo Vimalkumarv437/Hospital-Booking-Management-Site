@@ -1,0 +1,42 @@
+{% extends 'layout/Navbar.html' %}
+
+{% block 'content' %}
+
+<!------ Page for doctors' monthly info ------->
+
+<div class="container-fluid">
+    <h2 class="text-center my-4">Doctor and Patient Count</h2>
+    
+    <!-- Filter by Date -->
+    <div class="filter_doc_info">
+        <form method="GET">
+            <label for="Filter By Date">Filter By Date: 
+                <input type="date" name="date" value="{{ request.GET.date }}" style="background-color: transparent; color: white; border: 1px solid;">
+            </label>
+            <button type="submit">Filter</button>
+        </form>
+    </div>
+    
+    <table class="table table-bordered doctor-patient-table">
+        <thead>
+            <tr>
+                <th>Doctor Name</th>
+                <th>Patient Count</th>
+            </tr>
+        </thead>
+        <tbody class="text-light">
+            {% for doctor in doctor_patient_counts %}
+                <tr>
+                    <td>{{ doctor.name }}</td>
+                    <td>{{ doctor.patient_count }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="2" class="text-center">No doctors found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
